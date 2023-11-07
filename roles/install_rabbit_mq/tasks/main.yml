@@ -1,0 +1,13 @@
+---
+
+- name: Copy and install RPM packets to server
+  include_tasks: install.yml
+
+- name: Start RabbitMQ server
+  include_tasks: startServer.yml
+
+- name: Start RabbitMQ UI
+  include_tasks: startUI.yml
+
+- name: Create RabbitMQ administrator and set permissions
+  include_tasks: setUser.yml

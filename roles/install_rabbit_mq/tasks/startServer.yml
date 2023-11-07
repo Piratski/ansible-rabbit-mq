@@ -1,0 +1,9 @@
+---
+
+- name: Start RabbitMQ server
+  service:
+    name: rabbitmq-server
+    state: started
+
+- wait_for:
+    port: 5672

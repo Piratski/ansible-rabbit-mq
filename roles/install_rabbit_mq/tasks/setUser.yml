@@ -1,0 +1,8 @@
+- name: create "{{ RabbitMQAdmin }}" user
+  command: rabbitmqctl add_user "{{ RabbitMQAdmin }}" "{{ RabbitMQadminPassword }}"
+
+- name: set permissions for "{{ RabbitMQAdmin }}" user
+  command: rabbitmqctl set_permissions -p / "{{ RabbitMQAdmin }}" ".*" ".*" ".*"
+
+- name: set admin tag for "{{ RabbitMQAdmin }}"
+  command: rabbitmqctl set_user_tags "{{ RabbitMQAdmin }}" administrator

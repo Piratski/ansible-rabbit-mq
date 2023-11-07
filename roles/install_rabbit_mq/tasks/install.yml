@@ -1,0 +1,18 @@
+---
+
+- name: Copy rpm Erlang file to server
+  copy:
+    src: files/erlang-{{ ErlangVersion }}-1.el8.x86_64.rpm
+    dest: /tmp/erlang-{{ ErlangVersion }}-1.el8.x86_64.rpm
+- name: Install Erlang
+  shell: |
+    rpm -ivh /tmp/erlang-{{ ErlangVersion }}-1.el8.x86_64.rpm
+
+- name: Copy rpm RabbitMQ file to server
+  copy:
+    src: files/rabbitmq-server-{{ RabbitMQversion }}-1.el8.noarch.rpm
+    dest: /tmp/rabbitmq-server-{{ RabbitMQversion }}-1.el8.noarch.rpm
+- name: Install RabbitMQ
+  shell: |
+    rpm -ivh /tmp/rabbitmq-server-{{ RabbitMQversion }}-1.el8.noarch.rpm
+

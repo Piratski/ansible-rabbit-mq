@@ -1,0 +1,9 @@
+---
+
+## vars for RabbitMQ
+
+RabbitMQversion: 3.12.8
+ErlangVersion: 26.1.2
+
+RabbitMQAdmin: "addmin"
+RabbitMQadminPassword: "changeMe"
